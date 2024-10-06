@@ -18,4 +18,16 @@ describe('Calculator', () => {
   test('should support custom delimiters', () => {
     expect(Calculator.add("//;\n1;2")).toBe(3);
   });
+
+  test('should throw an error for negative numbers', () => {
+    expect(() => {
+      Calculator.add("1,-2,3");
+    }).toThrow("negative numbers not allowed: -2");
+  });
+
+  test('should throw an error for multiple negative numbers', () => {
+    expect(() => {
+      Calculator.add("1,-2,-3");
+    }).toThrow("negative numbers not allowed: -2,-3");
+  });
 });
