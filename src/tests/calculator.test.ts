@@ -12,4 +12,7 @@ describe('Calculator', () => {
   test('should return the sum of multiple comma-separated numbers', () => {
     expect(Calculator.add("1,2,3,4")).toBe(10);
   });
+  test('should handle new lines between numbers', () => {
+    expect(Calculator.add("1\n2,3")).toBe(6);
+  });
 });
