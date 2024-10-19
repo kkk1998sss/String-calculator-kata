@@ -17,6 +17,10 @@ describe('Calculator', () => {
   });
   test('should support custom delimiters', () => {
     expect(Calculator.add("//;\n1;2")).toBe(3);
+  }); 
+
+  test('should handle different delimiters', () => {
+    expect(Calculator.mul(`//@\n1@2`)).toBe(2);
   });
 
   test('should throw an error for negative numbers', () => {
