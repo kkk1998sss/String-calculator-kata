@@ -19,5 +19,15 @@ describe('Calculator', () => {
     expect(Calculator.add("//;\n1;2")).toBe(3);
   }); 
 
+  test('should handle different delimiters', () => {
+    expect(Calculator.mul(`//@\n1@2`)).toBe(2);
+  });
+
+  test('should throw an error for negative numbers', () => {
+    expect(() => {
+      Calculator.add("1,-2,3");
+    }).toThrow("negative numbers not allowed: -2");
+  });
+
   
 });
