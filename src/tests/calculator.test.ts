@@ -6,5 +6,8 @@ describe('Calculator', () => {
   test('should return the same number when only one number is provided', () => {
     expect(Calculator.add("1")).toBe(1);
   });
+  test('should return the sum of two comma-separated numbers', () => {
+    expect(Calculator.add("1,5")).toBe(6);
+  });
   
 });
